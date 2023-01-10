@@ -11,8 +11,8 @@ Gst.init(None)
 
 
 class AudioPlayerLinux(AbstractAudioPlayer):
-    def __init__(self, filename):
-        super().__init__(filename)
+    def __init__(self, filename, volume):
+        super().__init__(filename, volume)
         self._uri = self.fullfilename if 'file:' in self.fullfilename else 'file://{}'.format(
             pathname2url(self.fullfilename))
         self._signal = None

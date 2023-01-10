@@ -4,8 +4,8 @@ from time import sleep
 
 
 class AudioPlayerMacOS(AbstractAudioPlayer):
-    def __init__(self, filename):
-        super().__init__(filename)
+    def __init__(self, filename, volume):
+        super().__init__(filename, volume)
         # self._url = NSURL.URLWithString_('file://{}'.format(self._filename))
         # or ? self._url = NSURL.fileURLWithPath_(sound)    # this seems to work
 

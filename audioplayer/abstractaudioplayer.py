@@ -14,14 +14,14 @@ class AbstractAudioPlayer(ABC):
     Must create a subclass for every platform.
     """
     @abstractmethod
-    def __init__(self, filename):
+    def __init__(self, filename, volume = 100):
         """
         Only store filename and fullfilename.
         The actual player is lazy loaded - created in the first call to .play() 
         """
         self._player = None         # Lazy loaded
         self._filename = filename   # The file name as provided
-        self._volume = 100          # 100%
+        self._volume = volume       # 100%
         if not os.path.sep in filename:
             self._fullfilename = os.path.join(
                 os.getcwd(), filename)  # Full file name (with path)

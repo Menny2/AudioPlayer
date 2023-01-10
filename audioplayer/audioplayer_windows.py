@@ -3,8 +3,8 @@ from ctypes import windll
 
 
 class AudioPlayerWindows(AbstractAudioPlayer):
-    def __init__(self, filename):
-        super().__init__(filename)
+    def __init__(self, filename, volume):
+        super().__init__(filename, volume)
         self._alias = "A{}".format(id(self))
 
     def _mciSendString(self, command):
