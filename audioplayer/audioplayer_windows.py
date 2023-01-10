@@ -3,7 +3,7 @@ from ctypes import windll
 
 
 class AudioPlayerWindows(AbstractAudioPlayer):
-    def __init__(self, filename, volume):
+    def __init__(self, filename, volume = 100):
         super().__init__(filename, volume)
         self._alias = "A{}".format(id(self))
 
